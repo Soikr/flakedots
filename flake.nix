@@ -66,8 +66,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #brew.url = "github:zhaofengli/nix-homebrew";
-    brew.url = "github:Azd325/nix-homebrew";
+    brew.url = "github:zhaofengli/nix-homebrew";
 
     disko = {
       url = "github:nix-community/disko/latest";
