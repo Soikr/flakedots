@@ -20,7 +20,7 @@
   };
 
   systemd = {
-    sleep.extraConfig = "HibernateDelaySec=30m";
+    sleep.settings.Sleep.HibernateDelaySec = "30m";
     services."systemd-suspend-then-hibernate".aliases = ["systemd-suspend.service"];
   };
 }
