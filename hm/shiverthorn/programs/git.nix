@@ -37,6 +37,18 @@
         };
         init.defaultBranch = "main";
         gpg.format = "ssh";
+
+        "github.com" = {
+          addKeysToAgent = "yes";
+          compression = true;
+          identityFile = "${config.home.homeDirectory}/.ssh/git_auth";
+        };
+        "github.com-work" = {
+          hostname = "github.com";
+          addKeysToAgent = "yes";
+          compression = true;
+          identityFile = "${config.home.homeDirectory}/.ssh/git_work_auth";
+        };
       };
     };
     delta = {
@@ -44,19 +56,6 @@
       enableGitIntegration = true;
       options = {
         features = "decorations";
-      };
-    };
-    ssh.matchBlocks = {
-      "github.com" = {
-        addKeysToAgent = "yes";
-        compression = true;
-        identityFile = "${config.home.homeDirectory}/.ssh/git_auth";
-      };
-      "github.com-work" = {
-        hostname = "github.com";
-        addKeysToAgent = "yes";
-        compression = true;
-        identityFile = "${config.home.homeDirectory}/.ssh/git_work_auth";
       };
     };
   };

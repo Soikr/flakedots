@@ -1,8 +1,12 @@
 {pkgs, ...}: let
-  sketchybarConfig = pkgs.callPackage ./config {};
+  luaPkgs = pkgs.lua55Packages;
 
-  lua = pkgs.lua54Packages.lua.withPackages (ps: [
-    ps.lua
+  sketchybarConfig = pkgs.callPackage ./config {
+    luaPackages = luaPkgs;
+  };
+
+  lua = luaPkgs.lua.withPackages (ps: [
+    # ps.lua
     pkgs.sbarlua
     sketchybarConfig
   ]);
