@@ -7,7 +7,7 @@ in {
     wantedBy = ["graphical-session.target"];
     description = "Discord Rich Presence Extension Server";
     serviceConfig = {
-      ExecStart = "${discord-rpc-pkg}/bin/discord-rpc-server";
+      ExecStart = "${discord-rpc-pkg}/bin/discord-rpc-server-tray";
       Restart = "always";
       RestartSec = "3";
     };
