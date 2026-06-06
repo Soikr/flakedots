@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  discord-rpc-pkg = pkgs.callPackage ./rpc.nix {withTray = true;};
+  discord-rpc-pkg = pkgs.callPackage ./rpc.nix {};
 in {
   systemd.user.services.discord-rpc-extension = {
     enable = true;
@@ -7,9 +7,14 @@ in {
     wantedBy = ["graphical-session.target"];
     description = "Discord Rich Presence Extension Server";
     serviceConfig = {
-      ExecStart = "${discord-rpc-pkg}/bin/discord-rpc-server-tray";
+      ExecStart = "${discord-rpc-pkg}/bin/discord-rpc-server";
       Restart = "always";
-      RestartSec = "3";
+      RestartSec = "60";
+
+      Nice = 19;
+      IOSchedulingClass = "idle";
+      CPUQuota = "5%";
+      MemoryHigh = "100M";
     };
   };
 }

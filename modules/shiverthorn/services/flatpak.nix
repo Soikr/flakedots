@@ -5,6 +5,7 @@
     wantedBy = ["multi-user.target"];
     wants = ["network-online.target"];
     after = ["network-online.target"];
+    unitConfig.ConditionPathExists = "!/var/lib/flatpak/repo/config";
     path = [pkgs.flatpak];
     script = ''
       flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo

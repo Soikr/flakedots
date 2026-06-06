@@ -44,5 +44,12 @@
     };
   };
 
-  programs.seahorse.enable = true;
+  programs = {
+    seahorse.enable = true;
+
+    ssh = {
+      enableAskPassword = true;
+      askPassword = "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
+    };
+  };
 }
