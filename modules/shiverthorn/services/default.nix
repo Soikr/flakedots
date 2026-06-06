@@ -5,5 +5,6 @@
     ./plymouth.nix
     ./printing.nix
     ./ssh.nix
+    ./browser-rpc
   ];
 }

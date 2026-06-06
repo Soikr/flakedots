@@ -18,7 +18,7 @@
       signal-desktop
       halloy
       prismlauncher
-      superTuxKart
+      supertuxkart
 
       imhex
       radare2

@@ -19,6 +19,7 @@
 
   services = {
     mpris-proxy.enable = true;
-    syncthing.enable = true;
+    syncthing.enable = false;
+    arrpc.enable = true;
   };
 }
