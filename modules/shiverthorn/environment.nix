@@ -19,6 +19,7 @@
       halloy
       prismlauncher
       supertuxkart
+      pear-desktop
 
       imhex
       radare2
@@ -41,6 +42,8 @@
       fd
       python3
       rsync
+
+      usbmuxd
     ];
 
     shellAliases = {

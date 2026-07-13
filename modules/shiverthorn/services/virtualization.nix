@@ -21,7 +21,10 @@
   users.users."${config.my.user}".extraGroups = ["libvirtd" "kvm"];
 
   environment.systemPackages = with pkgs; [
-    gnome-boxes # VM management
     dnsmasq # VM networking
+    gnome-boxes
+    virt-v2v
   ];
+
+  networking.firewall.trustedInterfaces = ["virbr0"];
 }
