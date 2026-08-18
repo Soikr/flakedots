@@ -10,7 +10,14 @@
 
   homebrew = {
     taps = [
-      "pear-devs/pear"
+      {
+        name = "pear-devs/pear";
+        trusted = true;
+      }
+      {
+        name = "nextfire/tap";
+        trusted = true;
+      }
     ];
     casks = [
       "zen" # auto
@@ -43,6 +50,9 @@
       "apple-hewlett-packard-printer-drivers" # noauto
 
       "tailscale-app" # Temporary
+    ];
+    brews = [
+      "apple-music-discord-rpc" # noauto
     ];
   };
 }
