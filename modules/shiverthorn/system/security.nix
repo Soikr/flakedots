@@ -55,4 +55,20 @@
       "net.ipv4.conf.default.send_redirects" = false;
     };
   };
+
+  services.zapret = {
+    enable = false;
+    udpSupport = true;
+    udpPorts = [
+      "51820"
+    ];
+
+    params = [
+      "--dpi-desync-any-protocol"
+      "--dpi-desync-cutoff=d4"
+      "--dpi-desync=fake,split2"
+      "--dpi-desync-fooling=md5sig,badseq"
+      "--dpi-desync-repeats=6"
+    ];
+  };
 }
